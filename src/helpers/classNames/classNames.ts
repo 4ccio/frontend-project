@@ -1,5 +1,4 @@
 import { Simulate } from "react-dom/test-utils";
-import keyDown = Simulate.keyDown;
 
 type Mods = Record<string, boolean | string>;
 
