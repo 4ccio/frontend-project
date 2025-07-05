@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const MainPage = () => {
     const { t } = useTranslation('main');
-    return <div style={{ color: 'green' }}>{t('Главная страница')}</div>;
+    return <div>{t('Главная страница')}</div>;
 };
 
 export default MainPage;
