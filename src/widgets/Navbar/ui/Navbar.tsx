@@ -15,14 +15,14 @@ export const Navbar = ({ className }: NavbarProps) => {
                 <AppLink
                     to="/"
                     className={classNames(cls.mainLink)}
-                    theme={AppLinkTheme.SECONDARY}
+                    theme={AppLinkTheme.DEFAULT}
                 >
                     {t('Главная')}
                 </AppLink>
                 <AppLink
                     // eslint-disable-next-line i18next/no-literal-string
                     to="/about"
-                    theme={AppLinkTheme.SECONDARY}
+                    theme={AppLinkTheme.DEFAULT}
                 >
                     {t('О сайте_навигация')}
                 </AppLink>

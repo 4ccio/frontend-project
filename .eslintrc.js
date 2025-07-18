@@ -29,7 +29,7 @@ module.exports = {
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -42,6 +42,7 @@ module.exports = {
         'i18next/no-literal-string': ['error', { markupOnly: true }],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+        '@typescript-eslint/no-unused-vars': ['warn'],
     },
     globals: {
         __IS_DEV__: true,
