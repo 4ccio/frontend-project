@@ -1,0 +1,9 @@
+@use "common" as *;
+@use "border" as *;
+@use "button" as *;
+
+.app.light {
+    @include common;
+    @include border;
+    @include button;
+}

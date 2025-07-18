@@ -1,0 +1,36 @@
+@use "sass:map";
+
+$button-padding-x: (
+    small: 12px,
+    medium: 16px,
+    large: 20px
+);
+
+@mixin button-size($name) {
+    height: var(--control-height-#{$name});
+    font: var(--control-font-#{$name});
+    padding: var(--control-padding-y-#{$name}) map.get($button-padding-x, $name);
+}
+
+@mixin button-variant($name) {
+    background: var(--btn-#{$name}-bg);
+    color: var(--btn-#{$name}-text-color);
+    box-shadow: var(--btn-#{$name}-border-color) 0 0 0 var(--control-border-width);
+
+    &:focus-visible {
+        outline: none;
+        box-shadow:
+            var(--btn-#{$name}-border-color) 0 0 0 var(--control-border-width) inset,
+            var(--btn-#{$name}-focus-border-color) 0 0 0 2px;
+    }
+
+    &:not(:disabled):hover {
+        background: var(--btn-#{$name}-hover-bg);
+        box-shadow: var(--btn-#{$name}-hover-border-color) 0 0 0 var(--control-border-width);
+    }
+
+    &:not(:disabled):active {
+        background: var(--btn-#{$name}-active-bg);
+        box-shadow: var(--btn-#{$name}-active-border-color) 0 0 0 var(--control-border-width);
+    }
+}

@@ -1,0 +1,17 @@
+@mixin common {
+    /* COMMON */
+    --bg-color-1: #1f1f1f; // App background
+    --bg-color-2: #262626; // Subtle background
+    --comp-bg-1: #2f2f2f; // UI element background
+    --comp-bg-2: #353535; // Hovered UI element background
+    --comp-bg-3: #3b3b3b; // Active / Selected UI element background
+    --border-1: #434343; // Subtle borders and separators
+    --border-2: #505050; // UI element border and focus rings
+    --border-3: #666; // Hovered UI element border
+    --solid-1: #757575; // Solid backgrounds
+    --solid-2: #686868; // Hovered solid backgrounds
+    --text-1: rgb(255 255 255 / 86.5%); // Main text
+    --text-2: rgb(255 255 255 / 32%); // Additional text
+    --text-3: rgb(255 255 255 / 48%); // Additional text with low contrast
+    --color-contrast: rgb(255 255 255 / 86.5%);
+}

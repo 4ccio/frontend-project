@@ -1,12 +1,12 @@
 @import "reset";
 @import "variables/gloabal";
-@import "themes/normal";
+@import "themes/light";
 @import "themes/dark";
 
 .app {
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--primary-color);
+    font: var(--font-md);
+    background: var(--bg-color-1);
+    color: var(--text-1);
     min-height: 100vh;
 }
 

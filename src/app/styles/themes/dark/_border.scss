@@ -1,0 +1,8 @@
+@mixin border {
+    /* BORDER */
+    --border-color-disabled: rgb(0 0 0 / 10%);
+    --border-color-error: rgb(221 71 59);
+    --border-color-focus: #ebebeb;
+    --border-color-gray-dark: rgb(0 0 0 / 28%);
+    --border-color-gray-light: rgb(255 255 255 / 16%);
+}

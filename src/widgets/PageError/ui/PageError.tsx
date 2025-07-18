@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, SizeButton } from 'shared/ui/Button/Button';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
@@ -8,6 +9,7 @@ interface PageErrorProps {
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
+    const { theme } = useTheme();
     const { t } = useTranslation();
 
     const reloadPage = () => {
@@ -16,11 +18,11 @@ export const PageError = ({ className }: PageErrorProps) => {
     };
 
     return (
-        <div className={classNames(cls.PageError, {}, [className])}>
+        <div className={classNames(`app ${cls.PageError}`, {}, [className, theme])}>
             <p className={classNames(cls.message)}>
                 {t('Произошла непредвиденная ошибка')}
             </p>
-            <Button onClick={reloadPage}>
+            <Button size={SizeButton.MEDIUM} onClick={reloadPage}>
                 {t('Обновить страницу')}
             </Button>
         </div>

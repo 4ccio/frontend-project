@@ -1,0 +1,47 @@
+@mixin button {
+    /* BUTTON */
+    // default
+    --btn-default-bg: rgb(255 255 255 / 10%);
+    --btn-default-active-bg: rgb(255 255 255 / 10%);
+    --btn-default-active-border-color: var(--border-color-gray-light);
+    --btn-default-border-color: var(--border-color-gray-light);
+    --btn-default-hover-bg: var(--border-color-gray-light);
+    --btn-default-hover-border-color: var(--border-color-gray-light);
+    --btn-default-focus-border-color: var(--border-color-focus);
+    --btn-default-text-color: var(--text-1);
+
+    // primary
+    --btn-primary-bg: #ebebeb;
+    --btn-primary-active-bg: #c2c2c2;
+    --btn-primary-active-border-color: #1261ae;
+    --btn-primary-border-color: #3d3d3d;
+    --btn-primary-hover-bg: #fff;
+    --btn-primary-hover-border-color: #292929;
+    --btn-primary-focus-border-color: var(--border-color-focus);
+    --btn-primary-text-color: rgb(0 0 0 / 86.5%);
+
+    // backless
+    --btn-backless-bg: transparent;
+    --btn-backless-active-bg: rgb(255 255 255 / 6%);
+    --btn-backless-active-border-color: rgb(255 255 255 / 10%);
+    --btn-backless-border-color: var(--border-color-gray-light);
+    --btn-backless-hover-bg: rgb(255 255 255 / 10%);
+    --btn-backless-hover-border-color: var(--btn-backless-hover-bg);
+    --btn-backless-focus-border-color: var(--border-color-focus);
+    --btn-backless-text-color: var(--text-1);
+
+    // text
+    --btn-text-bg: transparent;
+    --btn-text-active-bg: rgb(255 255 255 / 6%);
+    --btn-text-active-border-color: transparent;
+    --btn-text-border-color: transparent;
+    --btn-text-hover-bg: rgb(255 255 255 / 10%);
+    --btn-text-hover-border-color: transparent;
+    --btn-text-focus-border-color: var(--border-color-focus);
+    --btn-text-text-color: var(--text-1);
+
+    // disabled
+    --btn-disabled-bg: rgb(255 255 255 / 4%);
+    --btn-disabled-border-color: transparent;
+    --btn-disabled-text-color: var(--text-3);
+}

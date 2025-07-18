@@ -1,11 +1,38 @@
+@use "app/styles/mixins" as mixins;
+
 .Button {
     cursor: pointer;
-    color: var(--inverted-primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    border-style: none;
+    transition: background-color 0.1s cubic-bezier(0.5, 1, 0.89, 1);
+
+    &:disabled {
+        cursor: auto;
+        pointer-events: none;
+        background: var(--btn-disabled-bg);
+        color: var(--btn-disabled-text-color);
+        box-shadow: var(--btn-disabled-border-color) 0 0 0 var(--control-border-width);
+    }
 }
 
-.clear {
-    padding: 0;
-    border: none;
-    background: none;
-    outline: none;
+// Варианты тем кнопок
+$variants: ([default, primary, text, backless]);
+
+@each $variant in $variants {
+    .#{$variant} {
+        @include mixins.button-variant($variant);
+    }
+}
+
+// Размеры кнопок
+$sizes: ([small, medium, large]);
+
+@each $size in $sizes {
+    .#{$size} {
+        @include mixins.button-size($size);
+    }
 }

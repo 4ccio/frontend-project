@@ -1,7 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from '../types/config';
+import path from 'path';
 
-export function buildCssLoader({ isDev }: BuildOptions) {
+export function buildCssLoader(isDev: boolean) {
     return {
         rules: [
             {
@@ -22,7 +22,18 @@ export function buildCssLoader({ isDev }: BuildOptions) {
                         },
                     },
                     // Compiles Sass to CSS
-                    'sass-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                // loadPaths: [
+                                //     // eslint-disable-next-line max-len
+                                //     path.resolve(__dirname, '..', '..', '..', 'src', 'app', 'styles'),
+                                // ],
+                            },
+                        },
+                    },
+
                 ],
             },
         ],
