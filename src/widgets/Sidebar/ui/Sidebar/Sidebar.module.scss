@@ -2,22 +2,113 @@
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     position: relative;
-    transition: width 0.3s;
+    transition: width 0.3s cubic-bezier(0.5, 1, 0.89, 1);
     background: var(--comp-bg-1);
+    padding: 24px 20px;
+    border-top-right-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: var(--font-h2);
+}
+
+.headerText {
+    opacity: 1;
+    transition: opacity 0.3s ease, width 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    width: auto;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: padding 0.3s ease, justify-content 0.3s ease;
+
+    &:hover {
+        background: var(--btn-text-hover-bg);
+    }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    transition: margin-right 0.3s ease;
+}
+
+.link {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 1;
+    width: auto;
+    transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+.switchers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    transition: flex-wrap 0.3s ease;
+    gap: 12px;
+}
+
+.switchers > * {
+    flex: 1;
+    width: 100%;
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
-}
 
-.switchers {
-    position: absolute;
-    bottom: 24px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+    .header {
+        justify-content: center;
+    }
 
-.lang {
-    margin-left: 24px;
+    .headerText {
+        opacity: 0;
+        width: 0;
+        pointer-events: none;
+    }
+
+    .item {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    .icon {
+        margin-right: 0;
+    }
+
+    .link {
+        opacity: 0;
+        width: 0;
+        pointer-events: none;
+    }
+
+    // .switchers {
+    //     justify-content: center;
+    // }
 }

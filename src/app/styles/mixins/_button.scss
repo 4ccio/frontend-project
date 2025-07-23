@@ -8,8 +8,9 @@ $button-padding-x: (
 
 @mixin button-size($name) {
     height: var(--control-height-#{$name});
-    font: var(--control-font-#{$name});
     padding: var(--control-padding-y-#{$name}) map.get($button-padding-x, $name);
+    gap: var(--btn-icon-gap-#{$name});
+    font: var(--control-font-#{$name});
 }
 
 @mixin button-variant($name) {

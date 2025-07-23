@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, SizeButton, ThemeButton } from './Button';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 export default {
     title: 'shared/Button',
@@ -18,51 +18,51 @@ const Template: ComponentStory<typeof Button> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
     children: 'Button',
-    theme: ThemeButton.DEFAULT,
+    theme: ButtonTheme.DEFAULT,
 };
 
 export const DefaultDark = Template.bind({});
 DefaultDark.args = {
     children: 'Button',
-    theme: ThemeButton.DEFAULT,
+    theme: ButtonTheme.DEFAULT,
 };
 DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Primary = Template.bind({});
 Primary.args = {
     children: 'Button',
-    theme: ThemeButton.PRIMARY,
+    theme: ButtonTheme.PRIMARY,
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'Button',
-    theme: ThemeButton.PRIMARY,
+    theme: ButtonTheme.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Text = Template.bind({});
 Text.args = {
     children: 'Button',
-    theme: ThemeButton.TEXT,
+    theme: ButtonTheme.TEXT,
 };
 
 export const TextDark = Template.bind({});
 TextDark.args = {
     children: 'Button',
-    theme: ThemeButton.TEXT,
+    theme: ButtonTheme.TEXT,
 };
 TextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Backless = Template.bind({});
 Backless.args = {
     children: 'Button',
-    theme: ThemeButton.BACKLESS,
+    theme: ButtonTheme.BACKLESS,
 };
 
 export const BacklessDark = Template.bind({});
 BacklessDark.args = {
     children: 'Button',
-    theme: ThemeButton.BACKLESS,
+    theme: ButtonTheme.BACKLESS,
 };
 BacklessDark.decorators = [ThemeDecorator(Theme.DARK)];

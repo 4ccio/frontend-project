@@ -34,5 +34,10 @@ $sizes: ([small, medium, large]);
 @each $size in $sizes {
     .#{$size} {
         @include mixins.button-size($size);
+
+        &.withIcon {
+            padding-left: var(--btn-icon-padding-#{$size});
+            padding-right: var(--btn-icon-padding-#{$size});
+        }
     }
 }

@@ -23,8 +23,8 @@
 
     // размеры
     --navbar-height: 56px;
-    --sidebar-width: 304px;
-    --sidebar-width-collapsed: 80px;
+    --sidebar-width: 288px;
+    --sidebar-width-collapsed: 88px;
     --control-border-width: 1px;
     --control-height-large: 48px;
     --control-height-medium: 40px;
@@ -35,4 +35,10 @@
     --control-font-large: var(--font-lg);
     --control-font-medium: var(--font-md);
     --control-font-small: var(--font-sm);
+    --btn-icon-padding-large: 12px;
+    --btn-icon-padding-medium: 10px;
+    --btn-icon-padding-small: 8px;
+    --btn-icon-gap-large: 8px;
+    --btn-icon-gap-medium: 6px;
+    --btn-icon-gap-small: 4px;
 }
