@@ -33,10 +33,10 @@
     // text
     --btn-text-bg: transparent;
     --btn-text-active-bg: rgb(255 255 255 / 6%);
-    --btn-text-active-border-color: transparent;
+    --btn-text-active-border-color: var(--btn-text-active-bg);
     --btn-text-border-color: transparent;
     --btn-text-hover-bg: rgb(255 255 255 / 10%);
-    --btn-text-hover-border-color: transparent;
+    --btn-text-hover-border-color: var(--btn-text-hover-bg);
     --btn-text-focus-border-color: var(--border-color-focus);
     --btn-text-text-color: var(--text-1);
 

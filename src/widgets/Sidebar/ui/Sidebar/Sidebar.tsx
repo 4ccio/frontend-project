@@ -32,6 +32,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         >
             <div className={cls.header}>
                 <div className={cls.headerText}>
+                    {/* eslint-disable-next-line i18next/no-literal-string */}
                     <span>Header</span>
                 </div>
                 <Button
