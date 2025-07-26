@@ -1,9 +1,11 @@
 @use "common" as *;
 @use "border" as *;
 @use "button" as *;
+@use "modal" as *;
 
-.app.light {
+.app_light_theme {
     @include common;
     @include border;
     @include button;
+    @include modal;
 }
