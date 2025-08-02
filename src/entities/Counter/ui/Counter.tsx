@@ -20,17 +20,18 @@ export const Counter = () => {
             <h1 data-testid="counter-value">
                 {counterValue}
             </h1>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button
                 data-testid="increment-btn"
                 onClick={increment}
+                // eslint-disable-next-line i18next/no-literal-string
             >
+
                 increment
             </Button>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button
                 data-testid="decrement-btn"
                 onClick={decrement}
+                // eslint-disable-next-line i18next/no-literal-string
             >
                 decrement
             </Button>
