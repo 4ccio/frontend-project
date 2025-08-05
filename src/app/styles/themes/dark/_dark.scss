@@ -2,10 +2,12 @@
 @use "border" as *;
 @use "button" as *;
 @use "modal" as *;
+@use "input" as *;
 
 .app_dark_theme {
     @include common;
     @include border;
     @include button;
     @include modal;
+    @include input;
 }

@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap");
 
 :root {
+    // цвета
+    --error-main: #fe4c4c;
+    --error-secondary: #ffebeb;
+    --error-text: #cc2626;
+    --warning-main: #fcb73e;
+    --warning-secondary: #fff0bc;
+    --warning-text: #d97e00;
+
+    // типография
     --font-family-main: inter, "Times New Roman", sans-serif;
     --font-size-lg: 18px;
     --font-line-lg: 24px;
@@ -35,13 +44,17 @@
     --control-font-large: var(--font-lg);
     --control-font-medium: var(--font-md);
     --control-font-small: var(--font-sm);
+    --control-outline-width: 2px;
     --btn-icon-padding-large: 12px;
     --btn-icon-padding-medium: 10px;
     --btn-icon-padding-small: 8px;
     --btn-icon-gap-large: 8px;
     --btn-icon-gap-medium: 6px;
     --btn-icon-gap-small: 4px;
+    --input-border-radius: 2px;
 
     // z- индексы
     --modal-z-index: 10;
+    --transition-timing: 0.1s;
+    --transition-fucntion: cubic-bezier(0.5, 1, 0.89, 1);
 }

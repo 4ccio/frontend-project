@@ -1,0 +1,49 @@
+@use "app/styles/mixins" as mixins;
+
+.Input {
+    border: var(--control-border-width) solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    background: var(--input-bg);
+    transition: border-color var(--transition-fucntion) var(--transition-timing);
+    box-shadow: none;
+
+    &::placeholder {
+        color: var(--placeholder-color);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--border-color-focus);
+        box-shadow: var(--border-color-focus) 0 0 0 var(--control-border-width);
+
+        &::placeholder {
+            color: var(--placeholder-color-light);
+        }
+    }
+
+    &:disabled {
+        background: var(--input-bg-disabled);
+    }
+
+    &:not(:disabled, :focus):hover {
+        border-color: var(--input-border-color-hover);
+    }
+}
+
+$sizes: ([small, medium, large]);
+
+@each $size in $sizes {
+    .#{$size} {
+        @include mixins.input-size($size);
+    }
+}
+
+$states: ([warning, error]);
+
+@each $state in $states {
+    .#{$state},
+    .#{$state}:focus,
+    .#{$state}:not(:disabled, :focus):hover {
+        @include mixins.input-state($state);
+    }
+}

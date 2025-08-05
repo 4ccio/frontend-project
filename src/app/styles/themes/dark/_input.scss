@@ -1,0 +1,7 @@
+@mixin input {
+    --input-bg: rgb(255 255 255 / 10%);
+    --input-border-color: rgb(255 255 255 / 6%);
+    --input-border-color-hover: var(--border-color-gray-light);
+    --input-bg-disabled: rgb(255 255 255 / 4%);
+    --input-border-color-disabled: rgb(255 255 255 / 4%);
+}

@@ -1,0 +1,24 @@
+@use "sass:map";
+
+$input-padding-x: (
+    small: 7px,
+    medium: 11px,
+    large: 15px
+);
+
+@mixin input-size($name) {
+    height: var(--control-height-#{$name});
+    padding: var(--control-padding-y-#{$name}) map.get($input-padding-x, $name);
+    font: var(--control-font-#{$name});
+}
+
+@mixin input-state($name) {
+    border-color: var(--#{$name}-main);
+    box-shadow: var(--#{$name}-main) 0 0 0 var(--control-border-width);
+
+    // &:hover,
+    // &:focus {
+    //     border-color: var(--#{$name}-main);
+    //     box-shadow: var(--#{$name}-main) 0 0 0 var(--control-border-width);
+    // }
+}
