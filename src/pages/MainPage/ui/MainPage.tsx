@@ -9,10 +9,6 @@ const MainPage = () => {
         <div>
             {t('Главная страница')}
             <BugButton />
-            <div style={{ marginTop: '10px' }}>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                <Input placeholder="Text input" />
-            </div>
         </div>
     );
 };
