@@ -1,5 +1,6 @@
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -10,7 +11,15 @@ export default ({ config }: {config: webpack.Configuration}) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
     };
-    config.resolve.modules.push(paths.src);
+
+    config.resolve.plugins = [
+        ...(config.resolve.plugins || []),
+        new TsconfigPathsPlugin({
+            extensions: config.resolve.extensions,
+        }),
+    ];
+
+    config.resolve.modules.push(paths.src, 'node_modules');
     config.resolve.extensions.push('.ts', '.tsx');
 
     // eslint-disable-next-line no-param-reassign
@@ -30,6 +39,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.plugins.push(
         new webpack.DefinePlugin({
             __IS_STORYBOOK__: JSON.stringify(true),
+            __IS_DEV__: JSON.stringify(true),
         }),
     );
 

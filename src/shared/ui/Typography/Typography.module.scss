@@ -1,0 +1,44 @@
+.Typography {
+    display: block;
+    text-align: inherit;
+
+    &.inlineBlock {
+        display: inline-block;
+    }
+
+    &.gutterBottom {
+        margin-bottom: 8px;
+    }
+
+    &.secondary {
+        color: var(--text-2);
+    }
+
+    &.secondary-low {
+        color: var(--text-3);
+    }
+
+    &.error {
+        color: var(--error-text);
+    }
+
+    &.warning {
+        color: var(--warning-text);
+    }
+
+    &.align-left {
+        text-align: left;
+    }
+
+    &.align-center {
+        text-align: center;
+    }
+
+    &.align-right {
+        text-align: right;
+    }
+
+    &.align-justify {
+        text-align: justify;
+    }
+}
