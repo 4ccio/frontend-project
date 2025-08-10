@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { LoginModal } from './LoginModal';
 
 export default {
@@ -17,9 +18,10 @@ export const Light = Template.bind({});
 Light.args = {
     isOpen: true,
 };
+Light.decorators = [StoreDecorator({ login: {} })];
 
 export const Dark = Template.bind({});
 Dark.args = {
     isOpen: true,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ login: {} })];

@@ -42,9 +42,12 @@ module.exports = {
         'no-tabs': ['error', { allowIndentationTabs: true }],
         'i18next/no-literal-string': [
             'error',
+            // {
+            //     markupOnly: true,
+            //     ignoreAttribute: ['data-testid', 'to'],
+            // },
             {
-                markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to'],
+                mode: 'jsx-text-only',
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
