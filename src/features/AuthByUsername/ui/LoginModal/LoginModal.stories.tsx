@@ -4,6 +4,8 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { LoginModal } from './LoginModal';
 
+import '../LoginForm/LoginForm';
+
 export default {
     title: 'features/LoginModal',
     component: LoginModal,

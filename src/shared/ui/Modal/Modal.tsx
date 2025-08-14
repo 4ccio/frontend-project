@@ -1,16 +1,20 @@
 import React, {
-    ReactNode, useCallback, useEffect, useRef, useState,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
 export interface ModalProps {
-	className?: string;
+    className?: string;
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
-    lazy?: boolean
+    lazy?: boolean;
 }
 
 const ANIMATION_TIMING = 100;
@@ -28,7 +32,7 @@ export const Modal = (props: ModalProps) => {
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-    const closeHandler = useCallback(() => {
+    const triggerClose = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
             timerRef.current = setTimeout(() => {
@@ -44,40 +48,41 @@ export const Modal = (props: ModalProps) => {
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
-            closeHandler();
+            triggerClose();
         }
-    }, [closeHandler]);
+    }, [triggerClose]);
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
             window.addEventListener('keydown', onKeyDown);
+        } else if (isMounted) {
+            setIsClosing(true);
+            timerRef.current = setTimeout(() => {
+                setIsClosing(false);
+                setIsMounted(false);
+            }, ANIMATION_TIMING);
         }
 
         return () => {
             clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
-    }, [isOpen, onKeyDown]);
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const mods:Record<string, boolean> = {
-        [cls.opened]: isOpen,
-        [cls.closed]: isClosing,
-    };
+    }, [isOpen, isMounted, onKeyDown]);
 
     if (lazy && !isMounted) {
         return null;
     }
 
+    const mods: Record<string, boolean> = {
+        [cls.opened]: isOpen && !isClosing,
+        [cls.closed]: isClosing,
+    };
+
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
+                <div className={cls.overlay} onClick={triggerClose}>
                     <div
                         className={classNames(cls.content)}
                         onClick={onContentClick}
