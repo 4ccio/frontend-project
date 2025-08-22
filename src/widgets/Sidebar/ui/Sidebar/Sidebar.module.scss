@@ -34,37 +34,6 @@
     gap: 8px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: padding 0.3s ease, justify-content 0.3s ease;
-
-    &:hover {
-        background: var(--btn-text-hover-bg);
-    }
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 8px;
-    transition: margin-right 0.3s ease;
-}
-
-.link {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    opacity: 1;
-    width: auto;
-    transition: opacity 0.3s ease, width 0.3s ease;
-}
-
 .switchers {
     display: flex;
     justify-content: space-around;
@@ -92,24 +61,4 @@
         width: 0;
         pointer-events: none;
     }
-
-    .item {
-        padding-left: 0;
-        padding-right: 0;
-        justify-content: center;
-    }
-
-    .icon {
-        margin-right: 0;
-    }
-
-    .link {
-        opacity: 0;
-        width: 0;
-        pointer-events: none;
-    }
-
-    // .switchers {
-    //     justify-content: center;
-    // }
 }
