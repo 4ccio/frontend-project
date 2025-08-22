@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import React from 'react';
+import React, { memo } from 'react';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { Languages } from 'lucide-react';
 
@@ -11,7 +11,7 @@ interface LangSwitcherProps {
     size?: ButtonSize;
 }
 
-export const LangSwitcher = (props: LangSwitcherProps) => {
+export const LangSwitcher = memo((props: LangSwitcherProps) => {
     const {
         className,
         short,
@@ -27,11 +27,11 @@ export const LangSwitcher = (props: LangSwitcherProps) => {
         <Button
             className={classNames('', {}, [className])}
             theme={theme}
-            icon={<Languages />}
+            iconComponent={Languages}
             size={size}
             onClick={toggle}
         >
             {t(short ? '' : 'Язык')}
         </Button>
     );
-};
+});

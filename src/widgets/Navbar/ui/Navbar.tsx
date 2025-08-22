@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
@@ -11,7 +11,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
@@ -28,11 +28,9 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-        setIsAuthModal(false);
     }, [dispatch]);
 
     if (authData) {
-        console.log('authData', authData, 'isAuthModal', isAuthModal);
         return (
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <div className={classNames(cls.links)}>
@@ -44,7 +42,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         );
     }
 
-    console.log('authData', authData, 'isAuthModal', isAuthModal);
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={classNames(cls.links)}>
@@ -56,4 +53,4 @@ export const Navbar = ({ className }: NavbarProps) => {
             </div>
         </div>
     );
-};
+});

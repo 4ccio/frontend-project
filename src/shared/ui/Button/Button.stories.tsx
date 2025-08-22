@@ -72,16 +72,16 @@ BacklessDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithIcons = () => (
     <div className="center-story">
-        <Button theme={ButtonTheme.DEFAULT} icon={<House />}>
+        <Button theme={ButtonTheme.DEFAULT} iconComponent={House}>
             Default with icon
         </Button>
-        <Button theme={ButtonTheme.PRIMARY} icon={<House />}>
+        <Button theme={ButtonTheme.PRIMARY} iconComponent={House}>
             Primary with icon
         </Button>
-        <Button theme={ButtonTheme.TEXT} icon={<House />}>
+        <Button theme={ButtonTheme.TEXT} iconComponent={House}>
             Text with icon
         </Button>
-        <Button theme={ButtonTheme.BACKLESS} icon={<House />}>
+        <Button theme={ButtonTheme.BACKLESS} iconComponent={House}>
             Backless with icon
         </Button>
     </div>
@@ -89,16 +89,16 @@ export const WithIcons = () => (
 
 export const WithIconsDark = () => (
     <div className="center-story">
-        <Button theme={ButtonTheme.DEFAULT} icon={<House />}>
+        <Button theme={ButtonTheme.DEFAULT} iconComponent={House}>
             Default with icon
         </Button>
-        <Button theme={ButtonTheme.PRIMARY} icon={<House />}>
+        <Button theme={ButtonTheme.PRIMARY} iconComponent={House}>
             Primary with icon
         </Button>
-        <Button theme={ButtonTheme.TEXT} icon={<House />}>
+        <Button theme={ButtonTheme.TEXT} iconComponent={House}>
             Text with icon
         </Button>
-        <Button theme={ButtonTheme.BACKLESS} icon={<House />}>
+        <Button theme={ButtonTheme.BACKLESS} iconComponent={House}>
             Backless with icon
         </Button>
     </div>
@@ -121,13 +121,13 @@ export const Sizes = () => (
 
 export const SizesWithIcon = () => (
     <div className="center-story">
-        <Button size={ButtonSize.SMALL} icon={<House />} theme={ButtonTheme.DEFAULT}>
+        <Button size={ButtonSize.SMALL} iconComponent={House} theme={ButtonTheme.DEFAULT}>
             Small
         </Button>
-        <Button size={ButtonSize.MEDIUM} icon={<House />} theme={ButtonTheme.DEFAULT}>
+        <Button size={ButtonSize.MEDIUM} iconComponent={House} theme={ButtonTheme.DEFAULT}>
             Medium
         </Button>
-        <Button size={ButtonSize.LARGE} icon={<House />} theme={ButtonTheme.DEFAULT}>
+        <Button size={ButtonSize.LARGE} iconComponent={House} theme={ButtonTheme.DEFAULT}>
             Large
         </Button>
     </div>
