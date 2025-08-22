@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import cls from './Typography.module.scss';
 
 export enum TypographyColor {
@@ -23,7 +23,7 @@ export interface TypographyProps {
     gutterBottom?: boolean;
 }
 
-export const Typography = (props: TypographyProps) => {
+export const Typography = memo((props: TypographyProps) => {
     const {
         className,
         children,
@@ -51,4 +51,4 @@ export const Typography = (props: TypographyProps) => {
             {children}
         </Component>
     );
-};
+});

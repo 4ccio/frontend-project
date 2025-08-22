@@ -2,10 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { Typography, TypographyColor } from 'shared/ui/Typography/Typography';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
@@ -20,15 +21,21 @@ const reducersToLoad: ReducersList = {
 
 export interface LoginFormProps {
 	className?: string;
+    onSuccess: () => void;
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginLoading);
     const error = useSelector(getLoginError);
+
+    const usernameRef = useRef(username);
+    const passwordRef = useRef(password);
+    usernameRef.current = username;
+    passwordRef.current = password;
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -38,9 +45,17 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername(
+            {
+                username: usernameRef.current,
+                password: passwordRef.current,
+            },
+        ));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess]);
 
     return (
         <DynamicModuleLoader reducers={reducersToLoad}>

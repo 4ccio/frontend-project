@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React from 'react';
+import React, { memo } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { SunMoon } from 'lucide-react';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
     size?: ButtonSize;
 }
 
-export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
     const {
         className,
         theme = ButtonTheme.TEXT,
@@ -25,7 +25,7 @@ export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
             size={size}
             className={classNames('', {}, [className])}
             onClick={toggleTheme}
-            icon={<SunMoon />}
+            iconComponent={SunMoon}
         />
     );
-};
+});

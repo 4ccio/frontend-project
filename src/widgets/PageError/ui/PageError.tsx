@@ -2,13 +2,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize } from 'shared/ui/Button/Button';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { memo } from 'react';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
 	className?: string;
 }
 
-export const PageError = ({ className }: PageErrorProps) => {
+export const PageError = memo(({ className }: PageErrorProps) => {
     const { theme } = useTheme();
     const { t } = useTranslation();
 
@@ -27,4 +28,4 @@ export const PageError = ({ className }: PageErrorProps) => {
             </Button>
         </div>
     );
-};
+});
