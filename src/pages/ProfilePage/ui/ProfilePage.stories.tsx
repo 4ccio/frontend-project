@@ -16,8 +16,26 @@ const Template: ComponentStory<typeof ProfilePage> = (args: object) => <ProfileP
 
 export const Light = Template.bind({});
 Light.args = {};
-Light.decorators = [StoreDecorator({})];
+Light.decorators = [StoreDecorator({
+    profile: {
+        data: {
+            first: 'Иван',
+            lastname: 'Иванов',
+        },
+        isLoading: false,
+        error: undefined,
+    },
+})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    profile: {
+        data: {
+            first: 'Иван',
+            lastname: 'Иванов',
+        },
+        isLoading: false,
+        error: undefined,
+    },
+})];
