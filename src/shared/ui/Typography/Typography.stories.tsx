@@ -29,7 +29,7 @@ export default {
 
 const Template: ComponentStory<typeof Typography> = (args) => <Typography {...args} />;
 
-const HeadingsTemplate = () => (
+const HeadingsTemplate: ComponentStory<typeof Typography> = () => (
     <div>
         <Typography gutterBottom variant="h1">Заголовок H1</Typography>
         <Typography variant="h2">Заголовок H2</Typography>
@@ -40,7 +40,7 @@ export const HeadingsLight = HeadingsTemplate.bind({});
 export const HeadingsDark = HeadingsTemplate.bind({});
 HeadingsDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-const ColorsAndAlignTemplate = () => (
+const ColorsAndAlignTemplate: ComponentStory<typeof Typography> = () => (
     <div>
         <Typography variant="p" align="left" color={TypographyColor.PRIMARY}>Параграф с цветом PRIMARY и выравниванием по левому краю</Typography>
         <Typography variant="p" align="center" color={TypographyColor.SECONDARY}>Параграф с цветом SECONDARY и выравниванием по центру.</Typography>
