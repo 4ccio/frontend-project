@@ -63,6 +63,7 @@ module.exports = {
         __IS_DEV__: 'readonly',
         __IS_STORYBOOK__: 'readonly',
         __API__: 'readonly',
+        __PROJECT__: 'readonly',
     },
     overrides: [
         {
