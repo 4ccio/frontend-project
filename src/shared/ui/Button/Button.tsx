@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Additional, classNames } from 'shared/lib/classNames/classNames';
 import React, {
     ButtonHTMLAttributes, FC, memo, ReactNode,
 } from 'react';
@@ -44,7 +44,7 @@ export const Button = memo((props: ButtonProps) => {
         ...otherProps
     } = props;
 
-    const additional: string[] = [
+    const additional: Additional = [
         className, cls[theme], cls[size],
     ];
 

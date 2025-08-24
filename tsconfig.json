@@ -14,10 +14,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "strict": true,
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
+      "module": "CommonJS"
     }
   },
   "include": [
