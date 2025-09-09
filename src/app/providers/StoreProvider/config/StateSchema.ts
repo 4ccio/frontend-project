@@ -9,6 +9,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import type { To } from '@remix-run/router';
 import type { NavigateOptions } from 'react-router/dist/lib/context';
+import { EditableProfileSchema } from 'features/EditableProfileCard/model/types/editableProfile';
 
 export interface StateSchema {
     counter: counterSchema,
@@ -16,7 +17,8 @@ export interface StateSchema {
 
     // async reducers
     login?: LoginSchema,
-    profile?: ProfileSchema
+    profile?: ProfileSchema,
+    editableProfile?: EditableProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -39,5 +41,6 @@ export interface ThunkExtraArg {
 
 export interface ThunkConfig<T> {
     rejectValue: T,
-    extra: ThunkExtraArg
+    extra: ThunkExtraArg,
+    state: StateSchema
 }

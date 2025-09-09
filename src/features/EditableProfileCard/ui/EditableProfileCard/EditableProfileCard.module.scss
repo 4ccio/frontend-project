@@ -1,0 +1,18 @@
+.EditableProfileCard {
+    // max-width: 600px;
+    padding: 20px 28px;
+    box-shadow: var(--border-2) 0 0 0 1px;
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+    margin-bottom: 16px;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 1rem;
+}

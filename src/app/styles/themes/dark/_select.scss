@@ -1,0 +1,10 @@
+@mixin select {
+    --select-bg: rgb(255 255 255 / 10%);
+    --select-bg-disabled: rgb(255 255 255 / 4%);
+    --select-bg-hover: var(--border-color-gray-light);
+    --select-border-color: rgb(255 255 255 / 6%);
+    --select-border-color-hover: var(--border-color-gray-light);
+    --select-border-color-disabled: rgb(255 255 255 / 4%);
+    --select-menu-arrow-color: rgb(255 255 255 / 54%);
+    --select-menu-arrow-color-disabled: var(--text-3);
+}

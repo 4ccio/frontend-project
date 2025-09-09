@@ -41,4 +41,16 @@
     &.align-justify {
         text-align: justify;
     }
+
+    &.weight-regular {
+        font-weight: 400;
+    }
+
+    &.weight-semi-bold {
+        font-weight: 600;
+    }
+
+    &.weight-bold {
+        font-weight: 700;
+    }
 }

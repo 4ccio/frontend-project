@@ -26,9 +26,12 @@
     --font-size-h2: 32px;
     --font-line-h2: 40px;
     --font-h2: var(--font-size-h2) / var(--font-line-h2) var(--font-family-main);
-    --font-size-h3: 20px;
-    --font-line-h3: 28px;
+    --font-size-h3: 24px;
+    --font-line-h3: 32px;
     --font-h3: var(--font-size-h3) / var(--font-line-h3) var(--font-family-main);
+    --font-size-h4: 20px;
+    --font-line-h4: 28px;
+    --font-h4: var(--font-size-h4) / var(--font-line-h4) var(--font-family-main);
 
     // размеры
     --navbar-height: 56px;
@@ -52,6 +55,7 @@
     --btn-icon-gap-medium: 6px;
     --btn-icon-gap-small: 4px;
     --input-border-radius: 2px;
+    --select-border-radius: 2px;
 
     // z- индексы
     --modal-z-index: 10;

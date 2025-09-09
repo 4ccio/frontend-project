@@ -16,13 +16,14 @@ enum InputState {
 }
 
 interface InputProps extends
-    Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'size'> {
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'size' | 'readOnly'> {
 	className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     size?: InputSize;
     error?: boolean,
     warning?: boolean,
+    readonly?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
@@ -35,6 +36,7 @@ export const Input = memo((props: InputProps) => {
         error = false,
         warning = false,
         autoFocus,
+        readonly = false,
         ...otherProps
     } = props;
 
@@ -47,6 +49,7 @@ export const Input = memo((props: InputProps) => {
     const mods: Record<string, boolean> = {
         [cls[InputState.ERROR]]: error,
         [cls[InputState.WARNING]]: warning,
+        [cls.readonly]: readonly,
     };
 
     useEffect(() => {
@@ -62,6 +65,7 @@ export const Input = memo((props: InputProps) => {
             type={type}
             value={value}
             onChange={onChangeHandler}
+            readOnly={readonly}
             {...otherProps}
         />
     );
