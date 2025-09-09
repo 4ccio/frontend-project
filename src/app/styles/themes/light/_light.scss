@@ -3,6 +3,7 @@
 @use "button" as *;
 @use "modal" as *;
 @use "input" as *;
+@use "select" as *;
 
 .app_light_theme {
     @include common;
@@ -10,4 +11,5 @@
     @include button;
     @include modal;
     @include input;
+    @include select;
 }

@@ -11,6 +11,14 @@
         color: var(--placeholder-color);
     }
 
+    &:read-only {
+        cursor: auto;
+    }
+
+    &:disabled {
+        background: var(--input-bg-disabled);
+    }
+
     &:focus {
         outline: none;
         border-color: var(--border-color-focus);
@@ -21,12 +29,14 @@
         }
     }
 
-    &:disabled {
-        background: var(--input-bg-disabled);
+    &:not(:disabled, :focus, :read-only):hover {
+        border-color: var(--input-border-color-hover);
     }
 
-    &:not(:disabled, :focus):hover {
-        border-color: var(--input-border-color-hover);
+    &:read-only:focus {
+        outline: none;
+        border-color: var(--input-border-color);
+        box-shadow: none;
     }
 }
 

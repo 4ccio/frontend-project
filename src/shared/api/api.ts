@@ -6,5 +6,4 @@ export const $axios = axios.create({
     headers: {
         authorization: localStorage.getItem(USER_KEY) || '',
     },
-
 });

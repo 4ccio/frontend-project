@@ -11,7 +11,7 @@ export default {
     argTypes: {
         variant: {
             control: { type: 'select' },
-            options: ['h1', 'h2', 'h3', 'p', 'span'],
+            options: ['h1', 'h2', 'h3', 'h4', 'p', 'span'],
         },
         color: {
             control: { type: 'select' },
@@ -34,6 +34,7 @@ const HeadingsTemplate: ComponentStory<typeof Typography> = () => (
         <Typography gutterBottom variant="h1">Заголовок H1</Typography>
         <Typography variant="h2">Заголовок H2</Typography>
         <Typography variant="h3">Заголовок H3</Typography>
+        <Typography variant="h4">Заголовок H4</Typography>
     </div>
 );
 export const HeadingsLight = HeadingsTemplate.bind({});

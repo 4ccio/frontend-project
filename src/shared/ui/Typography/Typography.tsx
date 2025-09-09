@@ -10,9 +10,11 @@ export enum TypographyColor {
     WARNING = 'warning',
 }
 
-type TypographyVariant = 'h1' | 'h2' | 'h3' | 'p' | 'span';
+type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
 
 type TypographyAlign = 'center' | 'left' | 'right' | 'justify';
+
+type TypographyWeight = 'regular' | 'semi-bold' | 'bold'
 
 export interface TypographyProps {
 	className?: string;
@@ -20,6 +22,7 @@ export interface TypographyProps {
     color?: TypographyColor;
     variant?: TypographyVariant;
     align?: TypographyAlign;
+    weight?: TypographyWeight;
     gutterBottom?: boolean;
 }
 
@@ -31,6 +34,7 @@ export const Typography = memo((props: TypographyProps) => {
         variant = 'span',
         gutterBottom,
         align,
+        weight = 'regular',
     } = props;
 
     const Component: TypographyVariant = variant;
@@ -44,6 +48,7 @@ export const Typography = memo((props: TypographyProps) => {
         className,
         cls[color],
         cls[`align-${align}`],
+        cls[`weight-${weight}`],
     ];
 
     return (
